@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+
+import { Routes, Route, Navigate } from "react-router-dom";
+
+import { useState, useEffect } from "react";
+
+import { Navbar } from "./components/Navbar";
+import { Planet } from "./components/Planet";
+
+import planetsData from "./data.json";
+//import {Planets} from "./types"; // check later
 
 function App() {
+  const [planets, setPlanets] = useState<any>(null);
+
+  useEffect(() => {
+    setPlanets(planetsData);
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header">
+        <Navbar data = {planets}></Navbar>
       </header>
+      <main className="main">
+        <Routes>
+          {planets && <Route path="/:planet" element={<Planet data = {planets}></Planet>}></Route>}
+          <Route path="*" element={<Navigate to="/Mercury" />}/>
+        </Routes>
+      </main>
     </div>
   );
 }
