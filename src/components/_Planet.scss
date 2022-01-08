@@ -2,9 +2,15 @@
 
     &__details {
         color: white;
-        padding: 40px 25px;
+        padding: 25px 0;
         display: flex;
         justify-content: space-between;
+        grid-column: 1/14;
+        grid-row: 2/3;
+
+        @include tablet() {
+            flex-wrap: wrap;
+        }
 
         &__wrapper {
             font-size: 0.875rem;
@@ -15,11 +21,20 @@
             display: flex;
             flex-direction: column;
             align-items:flex-start;
+
+            @include tablet() {
+                max-width: 150px;
+                font-size: 0.675rem;
+            }
         }
 
         &__info {
             font-size: 1.875rem;
             font-weight: bold;
+
+            @include tablet() {
+                font-size: 1.225rem;
+            }
         }
 
         &__title {

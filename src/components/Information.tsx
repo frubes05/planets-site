@@ -42,6 +42,7 @@ export const Information = ({ planet }: any) => {
         </div>
       )}
       <ul className="planet__article__details">
+        <div className="planet__article__texts">
         <h2 className="planet__article__title">{planet.name}</h2>
         {!separateData && (
           <>
@@ -62,6 +63,7 @@ export const Information = ({ planet }: any) => {
               </small>
             </>
           ))}
+        </div>
         <ul className="planet__article__buttons">
           <button className="planet__article__button planet__article__button--active" onClick={() => handleShownInformation("overview", 0)}>
             <span className="planet__article__button--number">01</span>
@@ -77,6 +79,24 @@ export const Information = ({ planet }: any) => {
           </button>
         </ul>
       </ul>
+      <ul className="planet__details">
+                <div className="planet__details__wrapper">
+                    <p className="planet__details__title">ROTATION TIME</p>
+                    <p className="planet__details__info">{planet.rotation}</p>
+                </div>
+                <div className="planet__details__wrapper">
+                    <p className="planet__details__title">REVOLUTION TIME</p>
+                    <p className="planet__details__info">{planet.revolution}</p>
+                </div>
+                <div className="planet__details__wrapper">
+                    <p className="planet__details__title">RADIUS</p>
+                    <p className="planet__details__info">{planet.radius}</p>
+                </div>
+                <div className="planet__details__wrapper">
+                    <p className="planet__details__title">AVERAGE TEMP</p>
+                    <p className="planet__details__info">{planet.temperature}</p>
+                </div>
+            </ul>
     </article>
   );
 };

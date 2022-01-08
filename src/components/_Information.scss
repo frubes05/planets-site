@@ -1,9 +1,11 @@
 .planet__article {
-    height: 400px;
     padding:50px 25px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(12, 100px);
+
+    @include tablet() {
+        display: block;
+    }
 
     &__image {
         height: 100%;
@@ -13,19 +15,48 @@
 
     &__show {
         width: 50%;
-        height: 100%;
+        height: 400px;
         display: flex;
         justify-content: center;
+        grid-column: 4/6;
+        grid-row: 1/2;
+
+        @include tablet() {
+            grid-column: 1/12;
+            width: 100%;
+        }
     }
 
     &__details {
-        width: 50%;
         height: 100%;
+        grid-column: 9/14;
+        grid-row: 1/2;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 20px;
         color: white;
+
+        @include tablet() {
+            grid-row: 2/3;
+            grid-column: 1/12;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap:50px;
+        }
+    }
+
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        
+
+        @include tablet() {
+            width: 50%;
+        }
     }
 
     &__title {
@@ -64,6 +95,11 @@
         display: flex;
         flex-direction:column;
         gap: 15px;
+
+        @include tablet() {
+            padding-top: 70px;
+            width: 50%;
+        }
     }
 
     &__button {
