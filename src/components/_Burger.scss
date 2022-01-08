@@ -1,0 +1,37 @@
+.burger{
+    display:inline-block;
+    cursor:pointer;
+    
+    &-input{
+      display:none;
+      
+      &:checked~.burger-menu{
+        .first{
+          transform:translateY(10px) rotate(45deg);
+        }
+        
+         .second{
+          transform:rotate(-45deg);
+        }
+        .third{
+          transform-origin:left;
+          transform:scaleX(0);
+        }
+      }
+    }
+    
+    &-menu{
+      display:flex;
+      flex-direction:column;
+      }
+  
+    
+    &-menu__line{
+      width:30px;
+      height:5px;
+      background:white;
+      margin:2.5px;
+      transition:all 0.3s ease-in-out;
+    }
+    
+  }

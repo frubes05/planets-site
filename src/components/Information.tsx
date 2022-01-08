@@ -48,7 +48,7 @@ export const Information = ({ planet }: any) => {
           <>
             <p className="planet__article__text">{planet.overview.content}</p>
             <small className="planet__article__source">
-              <span>Source:</span>
+              <span className="planet__article__source--text">Source:</span>
               <a href={`${planet.overview.source}`}>Wikipedia</a>
             </small>
           </>
@@ -58,11 +58,18 @@ export const Information = ({ planet }: any) => {
             <>
               <p className="planet__article__text">{el.content}</p>
               <small className="planet__article__source">
-                <span>Source:</span>
+                <span className="planet__article__source--text">Source:</span>
                 <a href={`${el.source}`}>Wikipedia</a>
               </small>
             </>
           ))}
+        </div>
+        <div className="planet__article__show--mobile">
+          <img
+            className="planet__article__image"
+            src={`${currentImage[type]}`}
+            alt={`${currentImage.name}`}
+          ></img>
         </div>
         <ul className="planet__article__buttons">
           <button className="planet__article__button planet__article__button--active" onClick={() => handleShownInformation("overview", 0)}>
