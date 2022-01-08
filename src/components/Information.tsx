@@ -32,7 +32,15 @@ export const Information = ({ planet }: any) => {
 
   return (
     <article className="planet__article">
-      
+      {currentImage && (
+        <div className="planet__article__show">
+          <img
+            className="planet__article__image"
+            src={`${currentImage[type]}`}
+            alt={`${currentImage.name}`}
+          ></img>
+        </div>
+      )}
       <ul className="planet__article__details">
         <div className="planet__article__texts">
         <h2 className="planet__article__title">{planet.name}</h2>
