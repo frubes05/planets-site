@@ -43,6 +43,10 @@
         width: 100%;
       }
 
+      @include mobile() {
+        display: none;
+      }
+
       &--burger {
         display: none;
 

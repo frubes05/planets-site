@@ -169,7 +169,6 @@
       font-weight: bold;
 
       @include mobile() {
-          white-space: nowrap;
           font-size: 0.875rem;
       }
     }
